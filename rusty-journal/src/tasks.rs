@@ -33,7 +33,7 @@ impl fmt::Display for Task {
 // https://docs.microsoft.com/en-us/learn/modules/rust-create-command-line-program/5-add-task-function
 pub fn add_task(journal_path: PathBuf, task: Task) -> Result<()> {
     // Open the file.
-    let mut file = OpenOptions::new()
+    let file = OpenOptions::new()
         .read(true)
         .write(true)
         .create(true)
@@ -52,7 +52,7 @@ pub fn add_task(journal_path: PathBuf, task: Task) -> Result<()> {
 // https://docs.microsoft.com/en-us/learn/modules/rust-create-command-line-program/6-complete-task-function
 pub fn complete_task(journal_path: PathBuf, task_position: usize) -> Result<()> {
     // Open the file.
-    let mut file = OpenOptions::new()
+    let file = OpenOptions::new()
         .read(true)
         .write(true)
         .open(journal_path)?;
